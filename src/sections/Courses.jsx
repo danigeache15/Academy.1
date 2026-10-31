@@ -2,8 +2,7 @@ import { useState } from "react";
 import FloatingShapes from "../components/FloatingShapes";
 
 const LEVEL_SHAPES = [
-  { type: "podium", color: "lime", x: 0.95, y: 0.12, z: -1, scale: 0.6, rot: [0.3, -0.6, 0], hideOnMobile: true },
-  { type: "chart", color: "orange", x: 0.04, y: 0.86, z: -1, scale: 0.55, rot: [0.25, 0.5, 0], hideOnMobile: true },
+  { type: "podium", color: "lime", x: 0.95, y: 0.12, z: -1, scale: 0.55, rot: [0.3, -0.6, 0], hideOnMobile: true },
 ];
 
 function colorOf(c) {

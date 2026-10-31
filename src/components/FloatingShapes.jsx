@@ -163,7 +163,8 @@ export default function FloatingShapes({ shapes, style }) {
       camera.updateProjectionMatrix();
       viewH = 2 * Math.tan((camera.fov * Math.PI) / 360) * camera.position.z;
       viewW = viewH * camera.aspect;
-      const narrow = w < 900;
+      // Phones and tablets have no side margins, so marked shapes would sit on top of the content.
+      const narrow = w < 1200;
       items.forEach(({ mesh, cfg }) => {
         mesh.visible = !(narrow && cfg.hideOnMobile);
         mesh.userData.base = new THREE.Vector3((cfg.x - 0.5) * viewW, (0.5 - cfg.y) * viewH, cfg.z ?? 0);

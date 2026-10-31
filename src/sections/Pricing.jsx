@@ -1,8 +1,7 @@
 import FloatingShapes from "../components/FloatingShapes";
 
 const PROGRAM_SHAPES = [
-  { type: "flag", color: "orange", x: 0.95, y: 0.2, z: -1, scale: 0.6, rot: [0.1, -0.4, 0], hideOnMobile: true },
-  { type: "crown", color: "navy", x: 0.05, y: 0.8, z: -1, scale: 0.55, rot: [0.35, 0, -0.1], hideOnMobile: true },
+  { type: "flag", color: "orange", x: 0.95, y: 0.18, z: -1, scale: 0.55, rot: [0.1, -0.4, 0], hideOnMobile: true },
 ];
 
 export default function Pricing({ t }) {

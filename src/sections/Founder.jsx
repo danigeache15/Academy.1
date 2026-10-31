@@ -10,7 +10,7 @@ export default function Founder({ t }) {
           {/* Avatar / illustration */}
           <div style={{ position: "relative" }}>
             <div className="card card-pop" style={{
-              background: "var(--navy)",
+              background: "var(--white)",
               padding: 0,
               overflow: "hidden",
               aspectRatio: "1 / 1.1",
@@ -18,33 +18,8 @@ export default function Founder({ t }) {
               flexDirection: "column",
               transform: "rotate(2deg)",
             }}>
-              {/* Geometric portrait */}
-              <div style={{ flex: 1, position: "relative", background: "var(--navy-800)" }}>
-                <svg viewBox="0 0 200 220" style={{ width: "100%", height: "100%", display: "block" }} preserveAspectRatio="xMidYMax meet">
-                  {/* Body */}
-                  <path d="M40 220 Q40 160 100 150 Q160 160 160 220 Z" fill="var(--navy-600)" />
-                  {/* Shirt / collar */}
-                  <path d="M75 155 L100 175 L125 155 L115 145 L100 158 L85 145 Z" fill="var(--orange)" stroke="var(--ink)" strokeWidth="1" />
-                  {/* Long hair (behind head) */}
-                  <path d="M50 100 Q44 50 100 44 Q156 50 150 100 L156 175 Q130 160 100 160 Q70 160 44 175 Z" fill="#2A1A0A" />
-                  {/* Head */}
-                  <circle cx="100" cy="100" r="48" fill="#C8956C" stroke="var(--ink)" strokeWidth="1.5" />
-                  {/* Fringe */}
-                  <path d="M54 92 Q56 52 100 52 Q144 52 146 92 Q130 66 100 68 Q72 68 54 92 Z" fill="#2A1A0A" />
-                  {/* Eyes */}
-                  <ellipse cx="84" cy="100" rx="6" ry="7" fill="#1A0A00" />
-                  <ellipse cx="116" cy="100" rx="6" ry="7" fill="#1A0A00" />
-                  <circle cx="86" cy="98" r="2" fill="white" />
-                  <circle cx="118" cy="98" r="2" fill="white" />
-                  {/* Brows */}
-                  <path d="M76 88 Q84 84 92 87" fill="none" stroke="#2A1A0A" strokeWidth="2.5" strokeLinecap="round" />
-                  <path d="M108 87 Q116 84 124 88" fill="none" stroke="#2A1A0A" strokeWidth="2.5" strokeLinecap="round" />
-                  {/* Nose */}
-                  <path d="M98 105 Q96 115 100 118 Q104 115 102 105" fill="none" stroke="#A0704A" strokeWidth="1.5" strokeLinecap="round" />
-                  {/* Smile */}
-                  <path d="M88 128 Q100 138 112 128" fill="none" stroke="#7A4A2A" strokeWidth="2.5" strokeLinecap="round" />
-                </svg>
-              </div>
+              {/* Left blank until the founder's photo is ready */}
+              <div style={{ flex: 1, background: "var(--white)" }} />
 
               <div style={{ padding: "16px 20px", background: "var(--ink)", borderTop: "2px solid var(--white)" }}>
                 <div style={{ fontSize: 13, fontWeight: 800, color: "var(--white)", fontFamily: "var(--font-display)", letterSpacing: "0.05em" }}>

@@ -1,15 +1,7 @@
-import FloatingShapes from "../components/FloatingShapes";
-
-const METHOD_SHAPES = [
-  { type: "quote", color: "orange", x: 0.04, y: 0.18, z: -1, scale: 0.6, rot: [0.2, 0.5, 0], hideOnMobile: true },
-  { type: "speech", color: "navy", x: 0.96, y: 0.8, z: -1, scale: 0.6, rot: [0.15, -0.5, 0], hideOnMobile: true },
-];
-
 export default function Methodology({ t }) {
   return (
     <section id="method" className="section" style={{ background: "var(--paper-2)", borderTop: "2px solid var(--ink)", borderBottom: "2px solid var(--ink)" }}>
-      <FloatingShapes shapes={METHOD_SHAPES} />
-      <div className="container" style={{ position: "relative", zIndex: 1 }}>
+      <div className="container">
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, alignItems: "start" }} className="method-grid">
           <div style={{ position: "sticky", top: 120 }}>
             <div className="eyebrow text-orange" style={{ marginBottom: 16 }}>— {t.method.eyebrow}</div>

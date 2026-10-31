@@ -4,10 +4,7 @@ import FloatingShapes from "../components/FloatingShapes";
 import BRAND from "../brand";
 
 const CTA_SHAPES = [
-  { type: "megaphone", color: "lime", x: 0.09, y: 0.24, z: 0, scale: 1.1, rot: [0.2, 0.5, 0.3] },
-  { type: "speech", color: "navy", x: 0.89, y: 0.76, z: -1, scale: 1 , rot: [0.1, -0.5, -0.1] },
-  { type: "network", color: "lime", x: 0.92, y: 0.2, z: -2, scale: 0.7, hideOnMobile: true },
-  { type: "quote", color: "navy", x: 0.11, y: 0.84, z: -2, scale: 0.7, rot: [0.2, 0.4, 0], hideOnMobile: true },
+  { type: "speech", color: "navy", x: 0.91, y: 0.72, z: -1, scale: 0.8, rot: [0.1, -0.5, -0.1], hideOnMobile: true },
 ];
 
 
