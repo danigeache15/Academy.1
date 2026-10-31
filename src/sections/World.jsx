@@ -103,7 +103,6 @@ export default function World({ t }) {
         .world-pano { position: relative; height: clamp(260px, 26vw, 400px); margin-top: 24px; }
         .world-pano svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
         .world-pan { animation: worldPan 90s linear infinite; }
-        .world:hover .world-pan { animation-play-state: paused; }
         .world-bubble { transform-box: fill-box; transform-origin: 20% 100%; animation: worldBob 4s ease-in-out infinite; }
         .world-window { animation: worldWindow 9s steps(1) infinite; }
         .world-lamp { animation: worldTwinkle 3s ease-in-out infinite; }
