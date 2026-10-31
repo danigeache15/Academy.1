@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { buildPanorama, PANORAMA_W, W, H, GROUND } from "../components/skylines";
 
-const LABELS = { london: "LONDON", newyork: "NEW YORK", paris: "PARIS", tokyo: "TOKYO" };
+const LABELS = { london: "LONDON", paris: "PARIS", rome: "ROME", cairo: "CAIRO", dubai: "DUBAI", tokyo: "TOKYO", sydney: "SYDNEY", rio: "RIO DE JANEIRO", newyork: "NEW YORK" };
 
 function Bubble({ text, x, y, delay }) {
   const w = text.length * 8.6 + 30;
@@ -20,24 +20,25 @@ function Bubble({ text, x, y, delay }) {
 function Panorama({ data, greetings }) {
   return (
     <>
-      {data.cities.map((c, i) => c.far && (
-        <g key={c.name} transform={`translate(${i * W} 0)`}>
+      {data.cities.map((c) => c.far && (
+        <g key={c.name} transform={`translate(${c.x} 0)`}>
           <path d={c.far} fill="#1B5876" />
           {c.snow && <path d={c.snow} fill="var(--navy-100)" opacity=".6" />}
         </g>
       ))}
       <path d={data.hills} fill="#154D6A" />
-      {data.cities.map((c, i) => <path key={c.name} d={c.mid} fill="#0B3B56" transform={`translate(${i * W} 0)`} />)}
+      {data.cities.map((c) => <path key={c.name} d={c.mid} fill="#0B3B56" transform={`translate(${c.x} 0)`} />)}
       <rect x="0" y={GROUND} width={PANORAMA_W} height={H - GROUND + 10} fill="var(--ink)" />
       {data.cities.map((c, i) => (
-        <g key={c.name} transform={`translate(${i * W} 0)`}>
+        <g key={c.name} transform={`translate(${c.x} 0)`}>
           <path d={c.front} fill="var(--ink)" />
-          {c.strokes && <path d={c.strokes} fill="none" stroke="var(--ink)" strokeWidth="3" />}
+          {c.holes && <path d={c.holes} fill="#0E4864" />}
+          {c.strokes && <path d={c.strokes} fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinecap="round" />}
           {c.windows.map((w, k) => (
             <rect key={k} className="world-window" x={w.x} y={w.y} width="3" height="4" fill="var(--lime)" style={{ animationDelay: `${w.d}s` }} />
           ))}
           {c.lights.map((l, k) => <circle key={k} className="world-lamp" cx={l.cx} cy={l.cy} r={l.r} fill="var(--lime)" />)}
-          <text x={W / 2} y={GROUND + 34} textAnchor="middle" style={{ font: "600 13px var(--font-body)", letterSpacing: "0.4em", fill: "var(--navy-100)", opacity: 0.7 }}>
+          <text x={c.w / 2} y={GROUND + 34} textAnchor="middle" style={{ font: "600 13px var(--font-body)", letterSpacing: "0.4em", fill: "var(--navy-100)", opacity: 0.7 }}>
             {LABELS[c.name]}
           </text>
           <Bubble text={greetings[i]} x={c.anchor[0]} y={c.anchor[1]} delay={i * 0.6} />
@@ -102,7 +103,7 @@ export default function World({ t }) {
         .world-title em { font-style: italic; color: var(--lime); }
         .world-pano { position: relative; height: clamp(260px, 26vw, 400px); margin-top: 24px; }
         .world-pano svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-        .world-pan { animation: worldPan 90s linear infinite; }
+        .world-pan { animation: worldPan ${Math.round(PANORAMA_W / 75)}s linear infinite; }
         .world-bubble { transform-box: fill-box; transform-origin: 20% 100%; animation: worldBob 4s ease-in-out infinite; }
         .world-window { animation: worldWindow 9s steps(1) infinite; }
         .world-lamp { animation: worldTwinkle 3s ease-in-out infinite; }

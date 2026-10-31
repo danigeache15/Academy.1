@@ -3,7 +3,7 @@ import "./globals.css";
 export const metadata = {
   title: "Communicate Academy — You have the knowledge. Learn to communicate it in English.",
   description:
-    "Online English and communication academy for B1+ university students and young professionals who want to speak with confidence — for better jobs, travel and international connections. Public speaking, personal branding and networking. Founded by Daniela Gomez.",
+    "Online English and communication academy for B1+ university students and young professionals who want to speak with confidence — for better jobs, travel and international connections. Public speaking, personal branding and networking. Founded by Daniela Gómez Hernández.",
 };
 
 export default function RootLayout({ children }) {

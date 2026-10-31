@@ -3,7 +3,7 @@ const BRAND = {
   name: "Communicate Academy",
   // Three lines of the stacked logo: display / italic script / spaced caps
   logo: ["ENGLISH", "Communicate", "ACADEMY"],
-  owner: "Daniela Gomez",
+  owner: "Daniela Gómez Hernández",
   linkedin: "", // e.g. "https://www.linkedin.com/in/..." — the button hides while empty
   whatsapp: "573192070787", // country code + number, digits only (wa.me format)
 };

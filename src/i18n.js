@@ -46,8 +46,8 @@ const I18N = {
       title1: "We help you communicate with",
       title2: "the whole world.",
       sub: "From a coffee in London to a job interview in New York — English connects you with people, places and opportunities everywhere you want to go.",
-      greetings: ["Hello!", "Nice to meet you!", "Let's talk!", "Cheers!"],
-      alt: "Night panorama of London, New York, Paris and Tokyo"
+      greetings: ["Hello!", "Let's talk!", "Nice to meet you!", "Welcome!", "How are you?", "Cheers!", "G'day, mate!", "Let's go!", "Great to see you!"],
+      alt: "Night panorama of London, Paris, Rome, Cairo, Dubai, Tokyo, Sydney, Rio de Janeiro and New York"
     },
     teachers: {
       eyebrow: "The academy",

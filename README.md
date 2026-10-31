@@ -1,6 +1,6 @@
 # Communicate Academy
 
-Landing page for Communicate Academy, the English and professional communication academy founded by Daniela Gomez.
+Landing page for Communicate Academy, the English and professional communication academy founded by Daniela Gómez Hernández.
 
 Built with Next.js 14 (App Router), React 18 and Three.js.
 
