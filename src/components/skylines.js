@@ -1,5 +1,5 @@
-// Silhouette data for the landscape strips. Everything is drawn in a 1600×320 box:
-// ground line at y = GROUND, sky above. Generators are seeded so server and client agree.
+// Silhouette data for the world panorama. Each city is drawn in its own 1600×320 tile
+// (ground line at y = GROUND); the tiles sit side by side. Generators are seeded so server and client agree.
 
 export const W = 1600;
 export const H = 320;
@@ -19,16 +19,17 @@ const f = (n) => Math.round(n * 10) / 10;
 
 /* ---------- Nature ---------- */
 
-// Rolling hills across the full width, closed to the bottom.
-export function hills(r, { y, amp, step = 140 }) {
-  const pts = [];
-  for (let x = -40; x <= W + 40 + step; x += step * (0.7 + r() * 0.6)) pts.push([x, y - r() * amp]);
-  let d = `M-40 ${H} L${pts[0][0]} ${f(pts[0][1])}`;
+// Rolling hills from 0 to `width`, starting and ending at the same height so copies can loop.
+export function hills(r, { y, amp, width = W, step = 140 }) {
+  const pts = [[0, y - amp / 2]];
+  for (let x = step; x < width - step / 2; x += step * (0.7 + r() * 0.6)) pts.push([x, y - r() * amp]);
+  pts.push([width, y - amp / 2]);
+  let d = `M0 ${H} L0 ${f(pts[0][1])}`;
   for (let i = 0; i < pts.length - 1; i++) {
     const [x1, y1] = pts[i], [x2, y2] = pts[i + 1];
     d += ` Q${f(x1)} ${f(y1)} ${f((x1 + x2) / 2)} ${f((y1 + y2) / 2)}`;
   }
-  return `${d} L${W + 40} ${H} Z`;
+  return `${d} L${width} ${f(pts[pts.length - 1][1])} L${width} ${H} Z`;
 }
 
 // A band of conifers between x0 and x1.
@@ -165,15 +166,20 @@ const L = {
   fujiSnow: () => `M570 131 L610 108 Q640 92 670 108 L712 132 L690 128 L676 140 L656 126 L640 138 L622 126 L604 140 L590 128 Z`,
 };
 
-/* ---------- Scenes ---------- */
+/* ---------- The panorama ---------- */
 
-export function buildScene(name) {
+export const CITIES = ["london", "newyork", "paris", "tokyo"];
+export const PANORAMA_W = W * CITIES.length;
+
+// Where each city's greeting bubble floats (tile coordinates).
+const ANCHORS = { london: [680, 30], newyork: [780, 26], paris: [820, 22], tokyo: [960, 36] };
+
+function buildCity(name) {
   const r = rng({ london: 11, newyork: 23, paris: 37, tokyo: 51 }[name]);
-  const s = { far: "", mid: "", front: "", windows: [], lights: [], strokes: "", snow: "" };
+  const s = { far: "", mid: "", front: "", windows: [], lights: [], strokes: "", snow: "", anchor: ANCHORS[name] };
 
   if (name === "london") {
-    s.far = hills(r, { y: 210, amp: 40 });
-    s.mid = forest(r, { x0: -20, x1: 520, y: GROUND - 6, h: 38 }) + grove(r, { x0: 1180, x1: 1620, y: GROUND - 4, h: 34 });
+    s.mid = forest(r, { x0: 0, x1: 520, y: GROUND - 6, h: 38 }) + grove(r, { x0: 1180, x1: 1600, y: GROUND - 4, h: 34 });
     const a = blocks(r, { x0: 300, x1: 640, min: 30, max: 70 }), b = blocks(r, { x0: 1150, x1: 1400, min: 26, max: 58 });
     s.front = a.d + b.d + L.bigBen(680) + L.towerBridge(880);
     s.strokes = L.towerBridgeCables(880);
@@ -182,9 +188,8 @@ export function buildScene(name) {
   }
 
   if (name === "newyork") {
-    s.far = hills(r, { y: 232, amp: 18, step: 220 });
     const back = blocks(r, { x0: 420, x1: 1260, min: 60, max: 150, wMin: 22, wMax: 40 });
-    s.mid = back.d + grove(r, { x0: -20, x1: 300, y: GROUND - 2, h: 26 });
+    s.mid = back.d + grove(r, { x0: 0, x1: 300, y: GROUND - 2, h: 26 });
     const a = blocks(r, { x0: 460, x1: 720, min: 50, max: 120 }), b = blocks(r, { x0: 920, x1: 1240, min: 50, max: 130 });
     s.front = a.d + b.d + L.empire(780) + L.chrysler(890) + L.liberty(240);
     s.windows = windows(r, [...a.rects, ...b.rects], 0.1);
@@ -192,23 +197,27 @@ export function buildScene(name) {
   }
 
   if (name === "paris") {
-    s.far = hills(r, { y: 200, amp: 36 });
-    s.mid = forest(r, { x0: -20, x1: 420, y: GROUND - 6, h: 30 }) + grove(r, { x0: 1240, x1: 1620, y: GROUND - 4, h: 30 });
+    s.mid = forest(r, { x0: 0, x1: 420, y: GROUND - 6, h: 30 }) + grove(r, { x0: 1240, x1: 1600, y: GROUND - 4, h: 30 });
     const a = mansards(r, { x0: 360, x1: 740 }), b = mansards(r, { x0: 900, x1: 1300 });
     s.front = a.d + b.d + L.eiffel(820);
     s.windows = windows(r, [...a.rects, ...b.rects], 0.12);
   }
 
   if (name === "tokyo") {
-    s.far = L.fuji() + hills(r, { y: 236, amp: 30, step: 180 });
+    s.far = L.fuji();
     s.snow = L.fujiSnow();
-    s.mid = forest(r, { x0: -20, x1: 560, y: GROUND - 6, h: 36 }) + L.pagoda(420);
+    s.mid = forest(r, { x0: 0, x1: 560, y: GROUND - 6, h: 36 }) + L.pagoda(420);
     const a = blocks(r, { x0: 640, x1: 900, min: 40, max: 110 }), b = blocks(r, { x0: 1020, x1: 1460, min: 40, max: 120 });
     s.front = a.d + b.d + L.tokyoTower(960);
     s.windows = windows(r, [...a.rects, ...b.rects], 0.1);
   }
-
-  // Stars, kept above the tallest silhouettes.
-  s.stars = Array.from({ length: 80 }, () => ({ x: f(r() * W), y: f(8 + r() * 150), r: f(0.6 + r() * 1.3), d: f(r() * 6), warm: r() < 0.4 }));
   return s;
+}
+
+export function buildPanorama() {
+  const r = rng(7);
+  return {
+    hills: hills(r, { y: 214, amp: 38, width: PANORAMA_W, step: 160 }),
+    cities: CITIES.map((name) => ({ name, ...buildCity(name) })),
+  };
 }

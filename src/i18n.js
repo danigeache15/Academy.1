@@ -37,6 +37,18 @@ const I18N = {
       tag3: "Personalized feedback"
     },
     marquee: ["ENGLISH MASTERY", "COMMUNICATION", "PUBLIC SPEAKING", "PERSONAL BRANDING", "NETWORKING", "LEADERSHIP"],
+    statement: {
+      text: "You have the knowledge. Learn to communicate it in English. You understand more than you think. What's missing is the confidence to say it — spontaneously, in your own voice. We help you bring it out.",
+      accents: ["knowledge.", "communicate", "voice.", "out."]
+    },
+    world: {
+      eyebrow: "Speak to the world",
+      title1: "We help you communicate with",
+      title2: "the whole world.",
+      sub: "From a coffee in London to a job interview in New York — English connects you with people, places and opportunities everywhere you want to go.",
+      greetings: ["Hello!", "Nice to meet you!", "Let's talk!", "Cheers!"],
+      alt: "Night panorama of London, New York, Paris and Tokyo"
+    },
     teachers: {
       eyebrow: "The academy",
       title: "Five pillars. One goal: communicating your value.",

@@ -1,8 +1,17 @@
+import FloatingShapes from "../components/FloatingShapes";
+
+const PILLAR_SHAPES = [
+  { type: "mic", color: "lime", x: 0.96, y: 0.12, z: -1, scale: 0.6, rot: [0.2, 0.3, -0.4], hideOnMobile: true },
+  { type: "network", color: "sky", x: 0.04, y: 0.5, z: -1, scale: 0.55, hideOnMobile: true },
+  { type: "crown", color: "lime", x: 0.96, y: 0.88, z: -1, scale: 0.6, rot: [0.35, 0, 0.1], hideOnMobile: true },
+];
+
 export default function Teachers({ t }) {
   const accents = ["var(--orange)", "var(--lime)", "var(--navy)", "var(--orange)", "var(--lime)"];
   return (
     <section id="teachers" className="section" style={{ background: "var(--ink)", color: "var(--white)" }}>
-      <div className="container">
+      <FloatingShapes shapes={PILLAR_SHAPES} />
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 48, gap: 32, flexWrap: "wrap" }}>
           <div style={{ maxWidth: 600 }}>
             <div className="eyebrow" style={{ color: "var(--lime)", marginBottom: 16 }}>— {t.teachers.eyebrow}</div>

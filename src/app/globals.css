@@ -42,6 +42,7 @@
 
   --font-display: "Archivo Black", "Arial Black", system-ui, sans-serif;
   --font-editorial: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }

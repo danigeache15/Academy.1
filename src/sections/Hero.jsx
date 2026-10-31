@@ -2,12 +2,11 @@ import { useEffect } from "react";
 import FloatingShapes from "../components/FloatingShapes";
 
 const HERO_SHAPES = [
-  { type: "triangle", color: "lime", x: 0.93, y: 0.24, z: 0, scale: 1.5, rot: [1.2, 0.3, 0.4] },
-  { type: "triangle", color: "orange", x: 0.8, y: 0.64, z: -1, scale: 1.1, rot: [1.4, 0, -0.5] },
-  { type: "box", color: "navy", x: 0.6, y: 0.74, z: -2, scale: 0.6, spin: 0.7 },
-  { type: "torus", color: "sky", x: 0.55, y: 0.14, z: -4, scale: 0.7, hideOnMobile: true },
-  { type: "ico", color: "orange", x: 0.98, y: 0.82, z: 1, scale: 0.8 },
-  { type: "octa", color: "lime", x: 0.46, y: 0.9, z: -5, scale: 0.6, hideOnMobile: true },
+  { type: "speech", color: "lime", x: 0.9, y: 0.2, z: 0, scale: 0.72, rot: [0.15, -0.45, 0.08] },
+  { type: "mic", color: "orange", x: 0.83, y: 0.68, z: -1, scale: 0.85, rot: [0.2, 0.3, -0.45] },
+  { type: "chart", color: "navy", x: 0.98, y: 0.86, z: 1, scale: 0.6, rot: [0.25, -0.6, 0] },
+  { type: "quote", color: "sky", x: 0.56, y: 0.13, z: -4, scale: 0.75, rot: [0.2, 0.4, 0], hideOnMobile: true },
+  { type: "megaphone", color: "orange", x: 0.47, y: 0.9, z: -5, scale: 0.75, rot: [0.2, -0.5, 0.25], hideOnMobile: true },
 ];
 
 

@@ -1,4 +1,10 @@
 import { useState } from "react";
+import FloatingShapes from "../components/FloatingShapes";
+
+const LEVEL_SHAPES = [
+  { type: "podium", color: "lime", x: 0.95, y: 0.12, z: -1, scale: 0.6, rot: [0.3, -0.6, 0], hideOnMobile: true },
+  { type: "chart", color: "orange", x: 0.04, y: 0.86, z: -1, scale: 0.55, rot: [0.25, 0.5, 0], hideOnMobile: true },
+];
 
 function colorOf(c) {
   return c === "lime" ? "var(--lime)" : c === "orange" ? "var(--orange)" : c === "navy" ? "var(--navy)" : "var(--ink)";
@@ -139,7 +145,8 @@ function CoursesCarousel({ t }) {
 export default function Courses({ t, layout = "cards" }) {
   return (
     <section id="courses" className="section">
-      <div className="container">
+      <FloatingShapes shapes={LEVEL_SHAPES} />
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 48, gap: 32, flexWrap: "wrap" }}>
           <div style={{ maxWidth: 720 }}>
             <div className="eyebrow text-orange" style={{ marginBottom: 16 }}>— {t.courses.eyebrow}</div>

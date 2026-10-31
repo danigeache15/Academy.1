@@ -1,7 +1,15 @@
+import FloatingShapes from "../components/FloatingShapes";
+
+const PROGRAM_SHAPES = [
+  { type: "flag", color: "orange", x: 0.95, y: 0.2, z: -1, scale: 0.6, rot: [0.1, -0.4, 0], hideOnMobile: true },
+  { type: "crown", color: "navy", x: 0.05, y: 0.8, z: -1, scale: 0.55, rot: [0.35, 0, -0.1], hideOnMobile: true },
+];
+
 export default function Pricing({ t }) {
   return (
     <section id="pricing" className="section" style={{ background: "var(--paper-2)", borderTop: "2px solid var(--ink)", borderBottom: "2px solid var(--ink)" }}>
-      <div className="container">
+      <FloatingShapes shapes={PROGRAM_SHAPES} />
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
         <div style={{ textAlign: "center", maxWidth: 720, margin: "0 auto 48px" }}>
           <div className="eyebrow text-orange" style={{ marginBottom: 16 }}>— {t.pricing.eyebrow}</div>
           <h2 className="editorial" style={{ fontSize: "clamp(36px, 5vw, 56px)", margin: 0, lineHeight: 1.02 }}>

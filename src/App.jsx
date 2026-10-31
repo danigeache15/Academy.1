@@ -4,9 +4,11 @@ import I18N from "./i18n";
 import Nav from "./components/Nav";
 import Hero from "./sections/Hero";
 import Marquee from "./sections/Marquee";
+import Statement from "./sections/Statement";
 import Methodology from "./sections/Methodology";
 import Courses from "./sections/Courses";
 import Teachers from "./sections/Teachers";
+import World from "./sections/World";
 import LevelTest from "./sections/LevelTest";
 import Pricing from "./sections/Pricing";
 import Blog from "./sections/Blog";
@@ -26,8 +28,10 @@ export default function App() {
       <Nav t={t} />
       <Hero t={t} />
       <Marquee t={t} />
+      <Statement t={t} />
       <Methodology t={t} />
       <Courses t={t} layout="cards" />
+      <World t={t} />
       <Teachers t={t} />
       <LevelTest t={t} onBook={scrollToCTA} />
       <Pricing t={t} />
