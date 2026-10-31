@@ -129,7 +129,7 @@ function Levels() {
           {t.courses.list.map((l, i) => {
             const [text, quote] = l.desc.split("“");
             return (
-              <article key={l.code} className="vb-level" data-reveal style={{ "--d": `${i * 0.12}s`, "--c": `var(--${l.color})` }}>
+              <article key={l.code} className="vb-level" data-reveal style={{ "--d": `${i * 0.12}s`, "--c": `var(--${l.color})`, "--ct": l.color === "lime" ? "var(--lime-700)" : `var(--${l.color})` }}>
                 <div className="vb-level-top">
                   <span className="vb-level-tag"><b />{l.weeks}</span>
                   <span className="vb-level-num">{l.code}</span>

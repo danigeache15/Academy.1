@@ -161,33 +161,28 @@ html:has(.vb) { scroll-behavior: smooth; scroll-padding-top: 76px; }
 .vb-steps h3 { font-size: 40px; margin: 16px 0 12px; }
 .vb-steps p { font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, .72); margin: 0; }
 
-/* Levels: night cards on white */
+/* Levels: outlined cards on white */
 .vb-levels { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .vb-level {
   position: relative; display: flex; flex-direction: column; overflow: hidden;
-  padding: 30px 30px 28px; border-radius: 24px; color: var(--white);
-  background:
-    radial-gradient(1.2px 1.2px at 18% 20%, rgba(255, 241, 199, .7), transparent),
-    radial-gradient(1px 1px at 72% 12%, rgba(142, 202, 230, .7), transparent),
-    radial-gradient(1.3px 1.3px at 86% 44%, rgba(255, 241, 199, .6), transparent),
-    linear-gradient(170deg, var(--night-top), var(--ink));
-  box-shadow: 0 30px 60px -36px rgba(2, 48, 71, .6);
-  transition: transform .6s var(--ease), box-shadow .6s var(--ease), opacity 1s var(--ease);
+  padding: 30px 30px 28px; border-radius: 24px; color: var(--ink);
+  background: transparent; border: 1.5px solid var(--rule-strong, rgba(2, 48, 71, .22));
+  transition: transform .6s var(--ease), border-color .6s var(--ease), background .6s var(--ease), opacity 1s var(--ease);
 }
 .vb-level::after { content: ""; position: absolute; left: 30px; right: 30px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--c); }
-.vb-level:hover { transform: translateY(-6px); box-shadow: 0 40px 70px -36px rgba(2, 48, 71, .75); }
+.vb-level:hover { transform: translateY(-6px); border-color: var(--ct); background: rgba(2, 48, 71, .02); }
 .vb-level-top { display: flex; justify-content: space-between; align-items: center; }
-.vb-level-tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--glass-line); font: 600 12px var(--font-mono); color: var(--navy-100); }
+.vb-level-tag { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--rule); font: 600 12px var(--font-mono); color: var(--ink-500); }
 .vb-level-tag b { width: 7px; height: 7px; border-radius: 50%; background: var(--c); }
-.vb-level-num { font-style: italic; font-size: 48px; line-height: 1; color: var(--c); }
+.vb-level-num { font-style: italic; font-size: 48px; line-height: 1; color: var(--ct); }
 .vb-level h3 { font-size: 46px; line-height: 1; margin: 48px 0 16px; }
-.vb-level p { font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, .74); margin: 0; }
+.vb-level p { font-size: 15px; line-height: 1.6; color: var(--ink-700); margin: 0; }
 .vb-level blockquote {
   margin: 26px 0 0; padding: 0 0 0 16px; border-left: 2px solid var(--c);
-  font-family: var(--font-serif); font-style: italic; font-size: 20px; line-height: 1.35; color: var(--lime-100);
+  font-family: var(--font-serif); font-style: italic; font-size: 20px; line-height: 1.35; color: var(--ink);
 }
-.vb-level-cta { margin-top: auto; padding-top: 28px; color: var(--lime); font-weight: 700; font-size: 14px; text-decoration: none; display: inline-flex; gap: 8px; }
-.vb-level-cta i { font-style: normal; transition: transform .35s var(--ease); }
+.vb-level-cta { margin-top: auto; padding-top: 28px; color: var(--ink); font-weight: 700; font-size: 14px; text-decoration: none; display: inline-flex; gap: 8px; }
+.vb-level-cta i { font-style: normal; color: var(--ct); transition: transform .35s var(--ease); }
 .vb-level-cta:hover i { transform: translateX(4px); }
 
 /* Academy (ink) */
