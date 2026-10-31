@@ -2,7 +2,7 @@
 
 Landing page for Communicate Academy, the English and professional communication academy founded by Daniela Gómez Hernández.
 
-Built with Next.js 14 (App Router), React 18 and Three.js.
+Built with Next.js 14 (App Router) and React 18.
 
 ## Run locally
 
@@ -25,4 +25,5 @@ npm start
 - `src/brand.js` — brand name, logo words, owner, LinkedIn and WhatsApp number.
 - `src/i18n.js` — all page copy.
 - `src/app/globals.css` — color palette and design tokens.
-- `src/components/FloatingShapes.jsx` — Three.js shapes in the hero and final call to action.
+- `src/site/` — the page (`Site.jsx`) and its styles (`site.css`).
+- `src/sections/World.jsx` and `src/components/skylines.js` — the world panorama and its city silhouettes.

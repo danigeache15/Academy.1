@@ -1,5 +1,6 @@
-import App from "../App";
+import Site from "../site/Site";
+import "../site/site.css";
 
 export default function Page() {
-  return <App />;
+  return <Site />;
 }

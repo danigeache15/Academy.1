@@ -1,4 +1,4 @@
-/* Proposal B — the night palette of the world panorama, with white sections for rhythm.
+/* Communicate Academy — the night palette of the world panorama, with white sections for rhythm.
    Same tokens as globals.css; everything scoped under .vb. */
 
 html:has(.vb) { scroll-behavior: smooth; scroll-padding-top: 76px; }

@@ -7,8 +7,8 @@ import { LogoFull } from "../components/Logo";
 import Statement from "../sections/Statement";
 import World from "../sections/World";
 
-// Proposal B: the same site told in the night palette of the world panorama,
-// with a few white sections in between for rhythm.
+// Communicate Academy: night-palette sections (the look of the world panorama)
+// alternating with white ones for rhythm.
 const t = { ...I18N.en, lang: "en" };
 const pad = (n) => String(n).padStart(2, "0");
 
@@ -333,7 +333,7 @@ function Footer() {
   );
 }
 
-export default function ProposalB() {
+export default function Site() {
   useReveal();
   return (
     <main className="vb">
