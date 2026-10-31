@@ -16,7 +16,7 @@ const I18N = {
       title1: "You have the knowledge.",
       title2: "Learn to communicate it",
       title3: "in English.",
-      sub: "Develop the English and professional communication skills needed to confidently express your ideas and present yourself as a professional in any situation.",
+      sub: "You already understand English. Now learn to speak it spontaneously and with confidence — at work, when you travel, with friends around the world and in your first professional opportunities. Online, flexible and focused on real-life communication.",
       cta: "Find your level",
       cta2: "Sign up",
       stat1n: "B1+",
@@ -28,23 +28,23 @@ const I18N = {
       coach: "DANIELA · COACH",
       you: "YOU",
       bubble1: "So, tell me about yourself.",
-      bubble2: "I'm a data analyst and I help teams make better decisions…",
+      bubble2: "I'm studying engineering, I tutor other students and I work part-time at a restaurant…",
       typing: "typing…",
       badgeTop: "B1+ → PRO",
       badgeSub: "from knowing to communicating",
-      tag1: "Live sessions",
-      tag2: "Real roleplays",
+      tag1: "Live online sessions",
+      tag2: "Real-life roleplays",
       tag3: "Personalized feedback"
     },
     marquee: ["ENGLISH MASTERY", "COMMUNICATION", "PUBLIC SPEAKING", "PERSONAL BRANDING", "NETWORKING", "LEADERSHIP"],
     teachers: {
       eyebrow: "The academy",
       title: "Five pillars. One goal: communicating your value.",
-      sub: "Not just an English course. English applied to how you present yourself, how you speak and how you connect.",
+      sub: "Not just an English course. English you can actually use: how you present yourself, how you speak and how you connect with people from anywhere.",
       meet: "Meet the founder",
       list: [
-        { name: "English Mastery", tag: "PILLAR", desc: "Develop the core English proficiency needed to express your ideas clearly and confidently in academic and professional settings." },
-        { name: "Communication", tag: "PILLAR", desc: "Master the art of active listening and empathetic dialogue to build stronger connections and foster collaborative environments." },
+        { name: "English Mastery", tag: "PILLAR", desc: "Develop the core English proficiency needed to express your ideas clearly and confidently in academic, professional and everyday situations." },
+        { name: "Communication", tag: "PILLAR", desc: "Speak spontaneously, join conversations with ease and build real connections — with classmates, customers or friends from other countries." },
         { name: "Public Speaking", tag: "PILLAR", desc: "Transform your voice into a powerful tool for influence, learning to present complex ideas with clarity and professional poise." },
         { name: "Personal Branding", tag: "PILLAR", desc: "Define your unique professional identity and craft a digital presence that showcases your expertise and value to the world." },
         { name: "Networking & Leadership", tag: "PILLAR", desc: "Build a robust professional network and develop the leadership skills required to navigate future academic and career opportunities." }
@@ -66,10 +66,10 @@ const I18N = {
     method: {
       eyebrow: "The learning method",
       title: "Learn. Practice. Get feedback. Apply.",
-      sub: "A four-step cycle repeated at every level, so theory turns into real confidence.",
+      sub: "A four-step cycle repeated at every level, so what you learn becomes something you can actually use — not just information.",
       steps: [
         { n: "01", t: "Learn", d: "Master the fundamentals of English and professional communication through structured theory and academic rigor." },
-        { n: "02", t: "Practice", d: "Engage in immersive live sessions and roleplays to build confidence and fluency in real-world scenarios." },
+        { n: "02", t: "Practice", d: "Engage in live online sessions and roleplays based on real-world scenarios — meeting new people, traveling, serving customers and job interviews." },
         { n: "03", t: "Feedback", d: "Receive personalized, expert feedback to refine your presentation and communication skills continuously." },
         { n: "04", t: "Apply", d: "Bridge the gap between knowledge and confidence by applying your skills to professional networking and leadership." }
       ]
@@ -103,7 +103,7 @@ const I18N = {
     pricing: {
       eyebrow: "Academy programs",
       title: "Academy sessions and workshops.",
-      sub: "Choose the learning journey that best fits your professional growth and communication goals.",
+      sub: "Flexible, practical options that fit around your classes and work. Choose the one that best matches your goals and budget.",
       currency: "CZK",
       plans: [
         { name: "Conversation Club", tag: "Practice session", price: 50, unit: "/session", per: "Speak confidently with practice sessions.", cta: "Book now", highlight: false },
@@ -126,7 +126,7 @@ const I18N = {
     },
     cta: {
       title: "Ready to communicate?",
-      sub: "For B1+ university students and young professionals aged 18–30. Take the first step: find your level and sign up.",
+      sub: "For B1+ university students and young professionals aged 18–30 who want to speak English with confidence — for better jobs, travel and international friendships. Take the first step: find your level and sign up.",
       btn: "Sign up",
       btn2: "Chat on WhatsApp"
     },
@@ -162,7 +162,7 @@ const I18N = {
       placeholder: "Type your question…",
       send: "Send",
       preset1: "What level do I need?",
-      preset2: "What are sessions like?",
+      preset2: "Can I study around my classes and job?",
       preset3: "Which program fits me?",
       bot: `Hi! 👋 This is ${BRAND.name}. How can we help?`,
       reply: "Thanks! We'll reply soon. In the meantime, want to take the level test?"
