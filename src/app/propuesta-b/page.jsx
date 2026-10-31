@@ -1,21 +1,20 @@
-import { Cormorant_Garamond, EB_Garamond } from "next/font/google";
-import Book from "../../book/Book";
-import "../../book/book.css";
+import { Fraunces } from "next/font/google";
+import ProposalB from "../../proposal-b/ProposalB";
+import "../../proposal-b/proposal-b.css";
 
-// Proposal B: the academy told as an enchanted book. The live site at "/" is unchanged.
-const cormorant = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500", "600"], style: ["normal", "italic"], variable: "--font-cormorant" });
-const garamond = EB_Garamond({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-garamond" });
+// Proposal B: white pages with night-sky city strips. The live site at "/" is unchanged.
+const serif = Fraunces({ subsets: ["latin"], style: ["normal", "italic"], axes: ["opsz", "SOFT", "WONK"], variable: "--font-fraunces" });
 
 export const metadata = {
-  title: "The Voice Within — Communicate Academy",
+  title: "Communicate Academy — Let what's already inside you speak",
   description:
-    "Everything you need is already inside you. An online English and communication academy for B1+ students who want to find their voice — told as a story.",
+    "Online English and communication academy for B1+ university students and young professionals who want to speak with confidence — for better jobs, travel and international connections.",
 };
 
-export default function ProposalB() {
+export default function ProposalBPage() {
   return (
-    <div className={`${cormorant.variable} ${garamond.variable}`}>
-      <Book />
+    <div className={serif.variable}>
+      <ProposalB />
     </div>
   );
 }
