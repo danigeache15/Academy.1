@@ -1,6 +1,6 @@
-# Communicate Academy
+# NexusDemy
 
-Landing page for Communicate Academy, the English and professional communication academy founded by Daniela Gómez Hernández.
+Landing page for NexusDemy, the English and professional communication academy founded by Daniela Gómez Hernández.
 
 Built with Next.js 14 (App Router) and React 18.
 

@@ -7,7 +7,7 @@ import { LogoFull } from "../components/Logo";
 import Statement from "../sections/Statement";
 import World from "../sections/World";
 
-// Communicate Academy: night-palette sections (the look of the world panorama)
+// NexusDemy: night-palette sections (the look of the world panorama)
 // alternating with white ones for rhythm.
 const t = { ...I18N.en, lang: "en" };
 const pad = (n) => String(n).padStart(2, "0");
